@@ -1,0 +1,31 @@
+package com.example.demo;
+
+public class User
+{
+	private String Id;
+	private String name;
+	
+	
+	public String getId() {
+		return Id;
+	}
+	public void setId(String id) {
+		Id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public User(String id, String name) {
+		super();
+		Id = id;
+		this.name = name;
+	}
+	
+	
+	
+	
+
+}

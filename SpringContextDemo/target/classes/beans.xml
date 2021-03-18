@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+ 
+<bean id="add1" class="com.stackroute.SpringContextDemo.Address"
+   scope="prototype" init-method="setUP" destroy-method="cleanUP">
+
+<constructor-arg>
+  <value>1</value>
+</constructor-arg>
+
+<constructor-arg>
+  <value>Chicago</value>
+</constructor-arg>
+<constructor-arg>
+  <value>USA</value>
+</constructor-arg>
+</bean>
+
+
+<bean id="add2" class="com.stackroute.SpringContextDemo.Address"
+   scope="prototype" >
+
+<constructor-arg>
+  <value>2</value>
+</constructor-arg>
+
+<constructor-arg>
+  <value>Delhi</value>
+</constructor-arg>
+<constructor-arg>
+  <value>India</value>
+</constructor-arg>
+</bean>
+
+<bean id="user1" class="com.stackroute.SpringContextDemo.User"
+ >
+
+</bean>
+
+<bean id="userBO1" class="com.stackroute.SpringContextDemo.UserBO">
+ <constructor-arg>
+     <map>
+        <entry>
+          <key>
+             <ref bean="user1"/>
+          </key>
+          <list>
+             <ref bean="add1"/>
+             <ref bean="add2"/>
+          </list>
+        
+        
+        </entry>
+     
+     
+     </map>
+ </constructor-arg>
+</bean>
+
+
+
+</beans>
